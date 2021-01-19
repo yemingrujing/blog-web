@@ -2,7 +2,7 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
     "target": "es2020",
     "module": "esnext",
