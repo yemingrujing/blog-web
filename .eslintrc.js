@@ -22,7 +22,20 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.jsx',
+          '.ts',
+          '.tsx',
+        ],
+      },
+    },
+  },
   rules: {
+    'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -35,6 +48,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-var-requires': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/prefer-default-export': 0,
     'jsx-a11y/anchor-is-valid': 'off',
     'max-len': ['error', { code: 300 }],
     'no-unused-vars': 'off',
@@ -64,5 +78,16 @@ module.exports = {
     'no-param-reassign': ['error', {
       props: false,
     }],
+    'no-restricted-globals': [
+      'error',
+      {
+        name: 'event',
+        message: 'Use local parameter instead.',
+      },
+      {
+        name: 'fdescribe',
+        message: 'Do not commit fdescribe. Use describe instead.',
+      },
+    ],
   },
 };
