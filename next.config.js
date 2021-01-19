@@ -3,7 +3,9 @@ const withCss = require('@zeit/next-css');
 const configs = {
   // 输出目录
   distDir: 'dest',
-  // 是否每个路由生成Etag
+  // 是否给每个路由生成Etag
+  // Etag是用来做缓存验证的，如果路由执行的时候，新的Etag是相同的，那么就会复用当前内容，而无需重新渲染
+  // 默认情况下，nextJS是会对每个路由生成Etag的。但是如果我们部署的时候，ngx已经做了Etag的配置，那么就可以关闭nextJS的Etag，节省性能
   generateEtags: true,
   // 本地开发时对页面内容的缓存
   onDemandEntries: {
@@ -14,7 +16,7 @@ const configs = {
   },
   // 在pages目录下会被当做页面解析的后缀
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-  // 配置buildId
+  // （不常用）配置buildId，一般用于同一个项目部署多个节点的时候用到
   generateBuildId: async () => {
     if (process.env.YOUR_BUILD_ID) {
       return process.env.YOUR_BUILD_ID;
