@@ -2,16 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 import '../static/js/canvas';
 
-interface Props {
-  info: any;
-}
-
-const MyHead: React.FunctionComponent<Props> = (props: Props) => {
+const MyHead = (props) => {
   const { info } = props;
   const defaultHead = {
     keywords: 'YeMingRuJing,web前端,nginx,linux,nodejs,vue,react,flutter,react-hooks',
-    article_des: 'YeMingRuJing的个人博客，一个有内涵的web前端，专注vue/react/nodejs/flutter',
-    article_title: 'YeMingRuJing\'s blog',
+    articleDes: 'YeMingRuJing的个人博客，一个有内涵的web前端，专注vue/react/nodejs/flutter',
+    articleTitle: 'YeMingRuJing\'s blog',
   };
   const head = info || defaultHead;
   return (

@@ -35,6 +35,7 @@ module.exports = {
     },
   },
   rules: {
+    '@typescript-eslint/no-var-requires': 0,
     'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
@@ -46,7 +47,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    '@typescript-eslint/no-var-requires': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 0,
     'jsx-a11y/anchor-is-valid': 'off',
