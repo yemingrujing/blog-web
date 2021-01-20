@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { Button } from 'antd';
-import MyHead from '../components/Head';
+import {
+  Row, Col, Pagination, BackTop,
+} from 'antd';
+import { Content } from '../static/style/home';
+import ArticleList from '../components/home/ArticleList';
+import Header from '../components/Head';
 import basic from '../api/basic';
 import Loading from '../components/loading';
 
@@ -35,11 +39,26 @@ const Home = (props) => {
     setLoading(false);
     setArticle(req);
   };
-  const { list, total } = article;
+  const { list, total } = article.data;
   return (
     <>
       <Loading loading={loading} />
-      <MyHead />
+      <Header />
+      <Content id="article-list">
+        <Row className="container">
+          <Col lg={17} md={17} sm={24} xs={24}>
+            <ArticleList list={list} />
+            <Pagination
+              defaultCurrent={1}
+              total={total}
+              pageSize={10}
+              className="pagination"
+              showTotal={() => `Total ${total} items`}
+              onChange={fetchArticle}
+            />
+          </Col>
+        </Row>
+      </Content>
     </>
   );
 };
