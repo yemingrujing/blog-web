@@ -12,7 +12,7 @@
   const _d = document.documentElement;// 返回html dom中的root 节点 即<html>
 
   // random helper
-  const random = function (...args: any[]) {
+  const random = function (...args) {
     if (arguments.length === 1) {
       if (Array.isArray(args[0])) {
         const index = Math.round(random(0, args[0].length - 1));
@@ -59,7 +59,7 @@
   };
 
   // point object
-  const Point = function (x?, y?) {
+  const Point = function (x, y) {
     this.x = 0;
     this.y = 0;
     this.set(x, y);
@@ -115,7 +115,7 @@
   };
 
   // class constructor
-  const Factory = function (options?) {
+  const Factory = function (options) {
     this._canvas = null;
     this._context = null;
     this._sto = null;
@@ -393,5 +393,5 @@
   };
   // export
   const factory = new Factory();
-  factory();
+  return factory;
 }));

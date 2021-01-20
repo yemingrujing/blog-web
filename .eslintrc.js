@@ -89,5 +89,6 @@ module.exports = {
         message: 'Do not commit fdescribe. Use describe instead.',
       },
     ],
+    'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions', allow: ['MethodEnum'] }],
   },
 };

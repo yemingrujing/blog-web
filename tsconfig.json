@@ -19,7 +19,7 @@
     "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "preserve"
   },
   "exclude": [
@@ -28,6 +28,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/*.js"
   ]
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { message } from 'antd';
-import { AxiosResponse } from '../config';
+import { AxiosResponse, MethodEnum } from '../config';
 
 // 自定义判断元素类型JS
 function toType(obj) {
@@ -42,8 +42,8 @@ function apiAxios(method, url, params) : Promise<AxiosResponse> {
     axios({
       method,
       url,
-      data: method === 'POST' || method === 'PUT' ? reqParams : null,
-      params: method === 'GET' || method === 'DELETE' || method === 'PATCH' ? reqParams : null,
+      data: method === MethodEnum.POST || method === MethodEnum.PUT ? reqParams : null,
+      params: method === MethodEnum.GET || method === MethodEnum.DELETE || method === MethodEnum.PATCH ? reqParams : null,
       withCredentials: false,
     })
       .then((res) => {
@@ -114,10 +114,10 @@ function apiAxios(method, url, params) : Promise<AxiosResponse> {
 }
 
 export default {
-  get: (url, params) => apiAxios('GET', url, params),
-  post: (url, params) => apiAxios('POST', url, params),
-  put: (url, params) => apiAxios('PUT', url, params),
-  delete: (url, params) => apiAxios('DELETE', url, params),
-  patch: (url, params) => apiAxios('PATCH', url, params),
+  get: (url, params) => apiAxios(MethodEnum.GET, url, params),
+  post: (url, params) => apiAxios(MethodEnum.POST, url, params),
+  put: (url, params) => apiAxios(MethodEnum.PUT, url, params),
+  delete: (url, params) => apiAxios(MethodEnum.DELETE, url, params),
+  patch: (url, params) => apiAxios(MethodEnum.PATCH, url, params),
   request: (method, url, params) => apiAxios(method, url, params),
 };

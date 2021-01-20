@@ -2,8 +2,12 @@ import Abstract from './index';
 import { ArticleDemo } from '../config';
 
 class Basic extends Abstract {
-  getDemo(params: ArticleDemo) {
-    return this.getReq('Basic.GetDemo', params);
+  getInfo(url:string) {
+    return this.getReq(url, null);
+  }
+
+  getArticl(params: ArticleDemo) {
+    return this.postReq('Basic.article', params);
   }
 }
 

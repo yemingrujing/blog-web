@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import '../static/js/canvas.ts';
+import '../static/js/canvas';
 
 interface Props {
   info: any;

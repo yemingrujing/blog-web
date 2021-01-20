@@ -1,4 +1,3 @@
-export type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
 export type ResponseType = 'arraybuffer' | 'blob' | 'document' | 'json' | 'text' | 'stream'
 
 interface UrlDict {
@@ -43,12 +42,21 @@ const getUrl = (biz: string, UrlName: string): string => {
 
 export default getUrl;
 
+export enum MethodEnum {
+
+  POST = 'POST',
+  GET = 'GET',
+  PUT = 'PUT',
+  DELETE = 'DELETE',
+  PATCH = 'PATCH'
+}
+
 export interface AxiosRequest {
   baseURL?: string;
   url: string;
   data?: any;
   params?: any;
-  method?: Method;
+  method?: MethodEnum;
   headers?: any;
   timeout?: number;
   responseType?: ResponseType;
