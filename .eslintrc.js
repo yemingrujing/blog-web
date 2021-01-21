@@ -50,7 +50,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 0,
     'jsx-a11y/anchor-is-valid': 'off',
-    'max-len': ['error', { code: 300 }],
+    'max-len': ['error', { code: 65535 }],
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'no-underscore-dangle': 'off',
@@ -62,6 +62,7 @@ module.exports = {
       1,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
+    'no-global-assign': ['error', { exceptions: ['requestAnimationFrame'] }],
     'no-mixed-operators': [
       'error',
       {

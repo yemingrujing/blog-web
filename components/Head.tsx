@@ -21,11 +21,13 @@ const MyHead = (props) => {
       />
       <meta name="renderer" content="webkit" />
       <meta name="keywords" content={head.keywords} />
-      <meta name="Description" content={head.article_des} />
+      <meta name="Description" content={head.articleDes} />
       <meta name="author" content="AlanGrady" />
       <link rel="shortcut icon" type="image/x-icon" href="image-base-url/blog/common/favicon.ico" />
       <meta name="sogou_site_verification" content="RSa1MBtgZI" />
-      <title key="viewport">{head.article_title}</title>
+      <title key="viewport">{head.articleTitle}</title>
+      <script src="../static/js/yinghua.js" />
+      <script src="../static/js/kindness.js" />
     </Head>
   );
 };
