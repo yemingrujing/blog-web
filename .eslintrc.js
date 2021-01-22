@@ -36,6 +36,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-this-alias': ['off'],
     'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
@@ -91,5 +92,6 @@ module.exports = {
       },
     ],
     'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions', allow: ['MethodEnum'] }],
+    'prefer-rest-params': 0,
   },
 };

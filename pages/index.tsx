@@ -4,8 +4,10 @@ import {
 } from 'antd';
 import { Content } from '../static/style/home';
 import ArticleList from '../components/home/ArticleList';
-import Header from '../components/Head';
-import basic from '../api/basic';
+import FullPage from '../components/home/FullPage';
+import Header from '../components/Header';
+import MyHead from '../components/Head';
+import Basic from '../api/basic';
 import Loading from '../components/loading';
 
 const Home = (props) => {
@@ -35,15 +37,18 @@ const Home = (props) => {
     }
     setListQuery(o);
     setLoading(true);
-    const req = await basic.getArticl('article', o);
+    const req = await Basic.getArticl(o);
     setLoading(false);
     setArticle(req);
   };
   const { list, total } = article.data;
+  console.log('article：{}', article);
   return (
     <>
       <Loading loading={loading} />
+      <MyHead />
       <Header />
+      <FullPage fullPage={fullPage} poem={poem} />
       <Content id="article-list">
         <Row className="container">
           <Col lg={17} md={17} sm={24} xs={24}>
@@ -64,8 +69,8 @@ const Home = (props) => {
 };
 
 Home.getInitialProps = async () => {
-  const article = await basic.getArticl({ page: 1 });
-  const info = await basic.getInfo('Basic.info');
+  const article = await Basic.getArticl({ page: 1 });
+  const info = await Basic.getInfo('Basic.info');
   return { article, info };
 };
 

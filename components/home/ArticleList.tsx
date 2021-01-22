@@ -6,7 +6,6 @@ import { Container } from '../../static/style/article';
 
 const ArticleList = (props) => {
   const { list } = props;
-  console.log('Props：{}', list);
   return list.map((item, index) => (
     <Container key={index.toString()}>
       <Row className="item">

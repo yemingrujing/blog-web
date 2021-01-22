@@ -1,5 +1,5 @@
 import Abstract from './index';
-import { ArticleDemo } from '../config';
+import { ArticleDemo, BlogSearchDemo } from '../config';
 
 class Basic extends Abstract {
   getInfo(url:string) {
@@ -8,6 +8,10 @@ class Basic extends Abstract {
 
   getArticl(params: ArticleDemo) {
     return this.postReq('Basic.article', params);
+  }
+
+  blogSearch(params: BlogSearchDemo) {
+    return this.postReq('Basic.blogSearch', params);
   }
 }
 

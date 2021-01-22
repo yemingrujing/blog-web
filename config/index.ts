@@ -11,7 +11,7 @@ const urlDict: UrlDict = {
     article: 'list',
     info: 'info',
     detail: 'detail',
-    keywordsSearch: 'keywordsSearch',
+    blogSearch: 'blog_search',
     comments: 'comments',
     comment: 'comment',
     timeLine: 'timeLine',
@@ -70,4 +70,8 @@ export interface AxiosResponse {
 
 export interface ArticleDemo {
   page: number;
+}
+
+export interface BlogSearchDemo {
+  keywords: string;
 }
