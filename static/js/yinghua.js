@@ -109,36 +109,41 @@ if (!(navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {
     canvas.width = window.innerWidth;
     canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;z-index:99999;');
     canvas.setAttribute('id', 'canvas_sakura');
-    document.getElementsByTagName('body')[0].appendChild(canvas);
-    const cxt = canvas.getContext('2d');
-    const sakuraList = new SakuraList();
-    for (let i = 0; i < 50; i += 1) {
-      const randomX = getRandom('x');
-      const randomY = getRandom('y');
-      const randomR = getRandom('r');
-      const randomS = getRandom('s');
-      const randomFnx = getRandom('fnx');
-      const randomFny = getRandom('fny');
-      const randomFnR = getRandom('fnr');
-      const sakura = new Sakura(randomX, randomY, randomS, randomR, {
-        x: randomFnx,
-        y: randomFny,
-        r: randomFnR,
+    const bodyElement = document.getElementsByTagName('body')[0];
+    if (bodyElement) {
+      document.getElementsByTagName('body')[0].appendChild(canvas);
+      const cxt = canvas.getContext('2d');
+      const sakuraList = new SakuraList();
+      for (let i = 0; i < 50; i += 1) {
+        const randomX = getRandom('x');
+        const randomY = getRandom('y');
+        const randomR = getRandom('r');
+        const randomS = getRandom('s');
+        const randomFnx = getRandom('fnx');
+        const randomFny = getRandom('fny');
+        const randomFnR = getRandom('fnr');
+        const sakura = new Sakura(randomX, randomY, randomS, randomR, {
+          x: randomFnx,
+          y: randomFny,
+          r: randomFnR,
+        });
+        sakura.draw(cxt);
+        sakuraList.push(sakura);
+      }
+      stop = requestAnimationFrame(function caller() {
+        cxt.clearRect(0, 0, canvas.width, canvas.height);
+        sakuraList.update();
+        sakuraList.draw(cxt);
+        stop = requestAnimationFrame(caller);
       });
-      sakura.draw(cxt);
-      sakuraList.push(sakura);
     }
-    stop = requestAnimationFrame(function () {
-      cxt.clearRect(0, 0, canvas.width, canvas.height);
-      sakuraList.update();
-      sakuraList.draw(cxt);
-      stop = requestAnimationFrame(arguments.callee);
-    });
   }
   window.onresize = function () {
     const canvasSnow = document.getElementById('canvas_sakura');
-    canvasSnow.width = window.innerWidth;
-    canvasSnow.height = window.innerHeight;
+    if (canvasSnow) {
+      canvasSnow.width = window.innerWidth;
+      canvasSnow.height = window.innerHeight;
+    }
   };
   img.onload = function () {
     startSakura();

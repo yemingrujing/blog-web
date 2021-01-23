@@ -72,7 +72,8 @@ onload = function () {
     let increase = 0;
     setTimeout(() => {
       anim = setInterval(() => {
-        if (++increase === 150) {
+        increase += 1;
+        if (increase === 150) {
           clearInterval(anim);
           $body.removeChild($elem);
         }

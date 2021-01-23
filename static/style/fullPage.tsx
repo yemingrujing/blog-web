@@ -12,7 +12,7 @@ const animation = keyframes`
 `;
 
 export const Content = styled.div`
-  background-image: url(${(props) => props.bg});
+  background-image: url(${(props) => props.bg}), url(${() => '/static/images/焰灵姬1.jpeg'});
   background-attachment: fixed;
   align-items: center;
   height: 100vh;
