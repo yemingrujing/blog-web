@@ -13,7 +13,7 @@ onload = function () {
   const $html = document.getElementsByTagName('html')[0];
   const $body = document.getElementsByTagName('body')[0];
   $html.onclick = function (e) {
-    let anim;
+    let anim = 0;
     const $elem = document.createElement('b');
     $elem.style.color = '#b5c427';
     $elem.style.zIndex = 9999;
@@ -21,8 +21,8 @@ onload = function () {
     $elem.style.select = 'none';
     const x = e.pageX;
     const y = e.pageY;
-    $elem.style.left = `${x - 10}px`;
-    $elem.style.top = `${y - 20}px`;
+    $elem.style.left = x - 10 + 'px';
+    $elem.style.top = y - 20 + 'px';
     clearInterval(anim);
     switch (clickCnt += 1) {
       case 5:
@@ -68,17 +68,17 @@ onload = function () {
         $elem.innerText = '😎';
         break;
     }
-    $elem.style.fontSize = `${(Math.random() * 10) + 8}px`;
+    $elem.style.fontSize = (Math.random() * 10) + 8 + 'px';
     let increase = 0;
-    setTimeout(() => {
-      anim = setInterval(() => {
+    setTimeout(function() {
+      anim = setInterval(function() {
         increase += 1;
         if (increase === 150) {
           clearInterval(anim);
           $body.removeChild($elem);
         }
-        $elem.style.top = `${y - 20 - increase}px`;
-        $elem.style.opacity = (150 - increase) / 120;
+        $elem.style.top = y - 20 - increase + 'px';
+        $elem.style.opacity = ((150 - increase) / 120).toString();
       }, 8);
     }, 70);
     $body.appendChild($elem);

@@ -1,6 +1,6 @@
-const withCss = require('@zeit/next-css');
+const path = require('path');
 
-const configs = {
+module.exports = {
   // 输出目录
   distDir: 'build',
   // 是否给每个路由生成Etag
@@ -49,7 +49,7 @@ const configs = {
   publicRuntimeConfig: {
     staticFolder: '/static',
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 };
-
-// withCss得到的是一个nextjs的config配置
-module.exports = withCss(configs);

@@ -85,7 +85,16 @@ function copy(e) {
   }
 }
 
-declare const window: any;
+// 声明全局对象
+declare global {
+  interface Window {
+    sidebar: any;
+  }
+
+  interface External {
+    addFavorite:any;
+  }
+}
 export function AddFavorite(sURL, sTitle) {
   const ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') !== -1 ? 'Command/Cmd' : 'Ctrl';
   const srURL = encodeURI(sURL);

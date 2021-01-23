@@ -2,29 +2,34 @@ import React from 'react';
 import Document, {
   Html, Head, Main, NextScript, DocumentContext,
 } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 class AppDocument extends Document<any> {
   static async getInitialProps(ctx: DocumentContext) {
+    const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
-    ctx.renderPage = () => originalRenderPage({
-      // 用于包裹整个react树
-      enhanceApp: (App) => App,
-      // 用于以每页为单位包装
-      enhanceComponent: (Component) => Component,
-    });
-    // 执行父类的`getInitialProps`方法，现在它包含了定制的`renderPage`
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+
+    try {
+      ctx.renderPage = () => originalRenderPage({
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+      });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
-    const { info } = this.props;
-    const defaultHead = {
-      keywords: 'YeMingRuJing,web前端,nginx,linux,nodejs,vue,react,flutter,react-hooks',
-      articleDes: 'YeMingRuJing的个人博客，一个有内涵的web前端，专注vue/react/nodejs/flutter',
-      articleTitle: 'YeMingRuJing\'s blog',
-    };
-    const head = info || defaultHead;
     return (
       <Html>
         <Head />

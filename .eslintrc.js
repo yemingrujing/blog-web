@@ -12,8 +12,11 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    parser: 'babel-eslint',
     ecmaFeatures: {
       jsx: true,
+      globalReturn: true,
+      impliedStrict: true,
     },
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -51,6 +54,11 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 0,
     'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'react/jsx-closing-tag-location': 'off',
+    'react/jsx-no-target-blank': 'off',
     'max-len': ['error', { code: 65535 }],
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
@@ -93,5 +101,6 @@ module.exports = {
     ],
     'no-shadow': ['error', { builtinGlobals: false, hoist: 'functions', allow: ['MethodEnum'] }],
     'prefer-rest-params': 0,
+    'prefer-template': 'error',
   },
 };
