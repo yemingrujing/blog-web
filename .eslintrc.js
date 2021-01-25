@@ -88,6 +88,7 @@ module.exports = {
     'no-param-reassign': ['error', {
       props: false,
     }],
+    'no-nested-ternary': 'off',
     'no-restricted-globals': [
       'error',
       {

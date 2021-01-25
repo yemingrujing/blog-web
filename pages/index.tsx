@@ -82,7 +82,7 @@ const Home = (props) => {
 
 Home.getInitialProps = async () => {
   const article = await Basic.getArticl({ page: 1 });
-  const info = await Basic.getInfo('Basic.info');
+  const info = await Basic.getInfo('Basic.Info');
   return { article, info };
 };
 

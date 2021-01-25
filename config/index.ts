@@ -8,14 +8,14 @@ interface UrlDict {
 
 const urlDict: UrlDict = {
   Basic: {
-    article: 'list',
-    info: 'info',
-    detail: 'detail',
-    blogSearch: 'blog_search',
-    comment: 'comment',
-    timeLine: 'timeLine',
-    gallery: 'gallery',
-    statistics: 'statistics',
+    Article: 'list',
+    Info: 'info',
+    Detail: 'detail',
+    BlogSearch: 'blog_search',
+    Comment: 'comment',
+    TimeLine: 'timeLine',
+    Gallery: 'gallery',
+    Statistics: 'statistics',
   },
 };
 

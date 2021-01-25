@@ -7,11 +7,27 @@ class Basic extends Abstract {
   }
 
   getArticl(params: ArticleDemo) {
-    return this.postReq('Basic.article', params);
+    return this.postReq('Basic.Article', params);
   }
 
   blogSearch(params: BlogSearchDemo) {
-    return this.postReq('Basic.blogSearch', params);
+    return this.postReq('Basic.BlogSearch', params);
+  }
+
+  detail(params: BlogSearchDemo) {
+    return this.postReq('Basic.Detail', params);
+  }
+
+  comment(params: BlogSearchDemo) {
+    return this.postReq('Basic.Comment', params);
+  }
+
+  timeLine(params: BlogSearchDemo) {
+    return this.postReq('Basic.TimeLine', params);
+  }
+
+  gallery(params: BlogSearchDemo) {
+    return this.postReq('Basic.Gallery', params);
   }
 }
 

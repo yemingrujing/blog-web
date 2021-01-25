@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { rotate } from './detail';
 
-export const HeaderBox = styled.div`
+export const HeaderBox = styled.div.attrs({
+  className: 'header_box',
+})`
   position: fixed;
   z-index: 999;
   width: 100%;

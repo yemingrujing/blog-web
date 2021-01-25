@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const compression = require('compression');
 
 const devProxy = {
   '/image-base-url': {
@@ -23,10 +24,19 @@ app.prepare()
   .then(() => {
     const server = express();
     if (dev && devProxy) {
-      Object.keys(devProxy).forEach((context) => {
-        server.use(createProxyMiddleware(context, devProxy[context]));
-      });
+      Object.keys(devProxy)
+        .forEach((context) => {
+          server.use(createProxyMiddleware(context, devProxy[context]));
+        });
     }
+    // gzip
+    server.use(compression());
+    server.use(express.static('seo'));
+    server.get('/detail/:id', (req, res) => {
+      const actualPage = '/detail';
+      const queryParams = { id: req.params.id };
+      app.render(req, res, actualPage, queryParams);
+    });
     server.all('*', (req, res) => {
       handle(req, res);
     });

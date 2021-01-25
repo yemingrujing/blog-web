@@ -106,7 +106,6 @@ const Aside = (props) => {
             {
                             tags.map((item, index) => (
                               <span
-                                id={`tage_span_${item.id}`}
                                 key={index.toString()}
                                 style={{
                                   color: `rgb(${Math.floor(Math.random() * 201)}, ${Math.floor(Math.random() * 201)}, ${Math.floor(Math.random() * 201)})`,

@@ -14,6 +14,7 @@ module.exports = {
     // 同时缓存的页面数
     pagesBufferLength: 2,
   },
+  trailingSlash: true,
   // 在pages目录下会被当做页面解析的后缀
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   // （不常用）配置buildId，一般用于同一个项目部署多个节点的时候用到
