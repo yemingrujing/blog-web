@@ -12,7 +12,6 @@ const urlDict: UrlDict = {
     info: 'info',
     detail: 'detail',
     blogSearch: 'blog_search',
-    comments: 'comments',
     comment: 'comment',
     timeLine: 'timeLine',
     gallery: 'gallery',
