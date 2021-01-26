@@ -5,7 +5,6 @@ import Head from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Container, Main } from '../static/style/timeLine';
-import Basic from '../api/basic';
 import basic from '../api/basic';
 
 const TimeLine = (props) => {
@@ -25,13 +24,13 @@ const TimeLine = (props) => {
           <Timeline mode="alternate" reverse>
             {
               list.map((k, i) => (
-                <Timeline.Item label={k.create_time} key={i}>
+                <Timeline.Item label={k.createTime} key={i.toString()}>
                   <Link href={{
                     pathname: '/detail',
                     query: { id: k.id },
                   }}
                   >
-                    <a><img src={k.cover} alt="" />{k.article_title}</a>
+                    <a><img src={k.cover} alt="" />{k.articleTitle}</a>
                   </Link>
                 </Timeline.Item>
               ))
@@ -45,6 +44,6 @@ const TimeLine = (props) => {
   );
 };
 
-TimeLine.getInitialProps = async () => basic.getInfo('Basic.TimeLine');
+TimeLine.getInitialProps = async () => basic.timeLine();
 
 export default TimeLine;

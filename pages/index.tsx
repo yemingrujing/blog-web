@@ -20,7 +20,6 @@ const Home = (props) => {
   const {
     tags, category, articles, fullPage, poem, notice,
   } = p.info.data;
-  console.log('listQuery：{}', listQuery);
   const fetchArticle = async (param) => {
     const url = window.location.href;
     window.location.href = url + (url.includes('#article-list') ? '' : '#article-list');
@@ -32,7 +31,6 @@ const Home = (props) => {
         o.tagName = '';
         break;
       case 'tags':
-        console.log('param：{}', param);
         o.tagName = param.val;
         o.category = '';
         break;

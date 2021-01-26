@@ -2,29 +2,19 @@ import Abstract from './index';
 import { ArticleDemo, BlogSearchDemo } from '../config';
 
 class Basic extends Abstract {
-  getInfo(url:string) {
-    return this.getReq(url, null);
-  }
+  getInfo = (url: string) => this.getReq(url, null);
 
-  getArticl(params: ArticleDemo) {
-    return this.postReq('Basic.Article', params);
-  }
+  getArticl = (params: ArticleDemo) => this.postReq('Basic.Article', params);
 
-  blogSearch(params: BlogSearchDemo) {
-    return this.postReq('Basic.BlogSearch', params);
-  }
+  blogSearch = (params: BlogSearchDemo) => this.postReq('Basic.BlogSearch', params);
 
-  detail(params: BlogSearchDemo) {
-    return this.postReq('Basic.Detail', params);
-  }
+  detail = (params: BlogSearchDemo) => this.postReq('Basic.Detail', params);
 
-  comment(params: BlogSearchDemo) {
-    return this.postReq('Basic.Comment', params);
-  }
+  comment = (params: BlogSearchDemo) => this.postReq('Basic.Comment', params);
 
-  gallery(params: BlogSearchDemo) {
-    return this.postReq('Basic.Gallery', params);
-  }
+  timeLine = () => this.getReq('Basic.TimeLine', null);
+
+  gallery = () => this.getReq('Basic.Gallery', null);
 }
 
 // 单列模式返回对象
