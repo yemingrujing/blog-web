@@ -13,12 +13,12 @@ const ArticleList = (props) => {
           <img src={item.cover} alt={item.articleTitle} />
         </Col>
         <Col lg={16} md={16} sm={24} xs={24} className="right">
-          <Link href={`/detail?id=${item.id}`} as={`/detail/${item.id}`}>
+          <Link prefetch href={`/detail?id=${item.id}`} as={`/detail/${item.id}`}>
             <h2>{item.articleTitle}</h2>
           </Link>
           <p>
             <ScheduleOutlined /> {item.createTime} |
-            <InboxOutlined /> <span><Link href={`/detail?id=${item.id}`} as={`/detail/${item.id}`}>{item.categoryName}</Link></span>
+            <InboxOutlined /> <span><Link prefetch href={`/detail?id=${item.id}`} as={`/detail/${item.id}`}>{item.categoryName}</Link></span>
           </p>
           <div>
             {item.description}

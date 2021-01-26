@@ -66,7 +66,7 @@ const Header = () => {
   };
   const goDetail = (id) => {
     setSearchDisplay(false);
-    Router.push(`/detail?id=${id}`);
+    Router.prefetch(`/detail?id=${id}`);
   };
   const generateMenu = () => (
     <Menu onClick={clickNav} mode={drawerDisplay ? 'vertical' : 'horizontal'}>

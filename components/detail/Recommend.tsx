@@ -11,7 +11,7 @@ const Recommend = (props) => {
   const { id } = props;
   recommend = recommend.filter((item) => item.id !== id);
   const go = (goId) => {
-    Router.push(`/detail?id=${goId}`, `/detail/${goId}`);
+    Router.prefetch(`/detail?id=${goId}`, `/detail/${goId}`);
   };
   const b = () => {
     Router.back();
