@@ -23,11 +23,11 @@ const MyHead = (props) => {
       <meta name="keywords" content={head.keywords} />
       <meta name="Description" content={head.articleDes} />
       <meta name="author" content="AlanGrady" />
-      <link rel="shortcut icon" type="image/x-icon" href="image-base-url/blog/common/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="/image-base-url/blog/common/favicon.ico" />
       <meta name="sogou_site_verification" content="RSa1MBtgZI" />
       <title key="viewport">{head.articleTitle}</title>
-      <script src="../static/js/yinghua.js" />
-      <script src="../static/js/kindness.js" />
+      <script src="/static/js/yinghua.js" />
+      <script src="/static/js/kindness.js" />
     </Head>
   );
 };

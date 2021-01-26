@@ -27,7 +27,7 @@ export const TopBox = styled.div`
   background-attachment: local;
   background-position: center;
   background-size: cover;
-  background-image: url("${(props) => props.cover}");
+  background-image: url("/${(props) => props.cover}");
   box-sizing: border-box;
   color: #fff;
   font-size: 14px;
@@ -115,7 +115,7 @@ export const Container = styled.div`
       top: 10px;
       width: 16px;
       height: 16px;
-      background: url("image-base-url/blog/common/copy.png");
+      background: url("/image-base-url/blog/common/1611624291167.png");
       background-size: cover;
       border: none;
       outline: none;

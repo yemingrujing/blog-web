@@ -10,6 +10,7 @@ import MyHead from '../components/Head';
 import Basic from '../api/basic';
 import Loading from '../components/loading';
 import Aside from '../components/home/Aside';
+import Footer from '../components/Footer';
 
 const Home = (props) => {
   const p = props;
@@ -75,6 +76,7 @@ const Home = (props) => {
             />
           </Col>
         </Row>
+        <Footer isHome="home" />
       </Content>
     </>
   );

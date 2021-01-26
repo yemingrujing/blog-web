@@ -50,4 +50,5 @@ app.prepare()
   .catch((err) => {
     console.log('An error occurred, unable to start the server');
     console.log(err);
+    process.exit(1);
   });

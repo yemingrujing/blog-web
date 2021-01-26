@@ -32,7 +32,9 @@ class AppDocument extends Document<any> {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          {this.props.styleTags}
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -40,7 +40,6 @@ const Detail = (props) => {
     recommend,
     comments,
   } = props;
-  console.log(`articleContent：${articleContent}`);
   const detail = Buffer.from(articleContent)
     .toString();
   const previewImgEvent = () => {
@@ -103,7 +102,7 @@ const Detail = (props) => {
           {recommend.length > 1 && <Recommend recommend={recommend} id={id} />}
           <Comment comments={comments} article={articleTitle} id={id} />
         </Container>
-        <Footer />
+        <Footer isHome="detail" />
       </DetailContent>
       {show && <ImagePreview modal={modal} closeModal={closeModal} />}
       <BackTop />
