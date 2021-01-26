@@ -44,10 +44,10 @@ module.exports = {
    */
   rules: {
     '@typescript-eslint/no-var-requires': 0,
-    '@typescript-eslint/no-this-alias': ['off'],
-    'class-methods-use-this': 'off',
+    '@typescript-eslint/no-this-alias': [0],
+    'class-methods-use-this': 0,
     'import/extensions': [
-      'error',
+      2,
       'ignorePackages',
       {
         js: 'never',
@@ -56,17 +56,17 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': [2, { devDependencies: true }],
     'import/prefer-default-export': 0,
-    'jsx-a11y/anchor-is-valid': 'off',
-    'jsx-a11y/control-has-associated-label': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'max-len': ['error', { code: 65535 }],
-    'no-global-assign': ['error', { exceptions: ['requestAnimationFrame'] }],
+    'jsx-a11y/anchor-is-valid': 0,
+    'jsx-a11y/control-has-associated-label': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'max-len': [2, { code: 65535 }],
+    'no-global-assign': [2, { exceptions: ['requestAnimationFrame'] }],
     'no-mixed-operators': [
-      'error',
+      2,
       {
         groups: [
           ['+', '-', '*', '/', '%', '**'],
@@ -78,12 +78,12 @@ module.exports = {
         allowSamePrecedence: true,
       },
     ],
-    'no-param-reassign': ['error', {
+    'no-param-reassign': [2, {
       props: false,
     }],
-    'no-nested-ternary': 'off',
+    'no-nested-ternary': 0,
     'no-restricted-globals': [
-      'error',
+      2,
       {
         name: 'event',
         message: 'Use local parameter instead.',
@@ -94,26 +94,26 @@ module.exports = {
       },
     ],
     'no-restricted-syntax': 0,
-    'no-shadow': ['error', {
+    'no-shadow': [2, {
       builtinGlobals: false,
       hoist: 'functions',
       allow: ['MethodEnum']
     }],
-    'no-unused-vars': 'off',
-    'no-use-before-define': 'off',
-    'no-underscore-dangle': 'off',
-    'no-return-assign': 'off',
-    'react/jsx-closing-tag-location': 'off',
-    'react/jsx-no-target-blank': 'off',
-    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 0,
+    'no-use-before-define': 0,
+    'no-underscore-dangle': 0,
+    'no-return-assign': 0,
+    'react/jsx-closing-tag-location': 0,
+    'react/jsx-no-target-blank': 0,
+    'react/react-in-jsx-scope': 0,
     'react/prop-types': 0, // 防止在react组件定义中缺少props验证
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'prefer-rest-params': 0,
-    'prefer-template': 'error',
+    'prefer-template': 2,
   },
 };
