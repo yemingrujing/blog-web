@@ -22,10 +22,6 @@ class Basic extends Abstract {
     return this.postReq('Basic.Comment', params);
   }
 
-  timeLine(params: BlogSearchDemo) {
-    return this.postReq('Basic.TimeLine', params);
-  }
-
   gallery(params: BlogSearchDemo) {
     return this.postReq('Basic.Gallery', params);
   }

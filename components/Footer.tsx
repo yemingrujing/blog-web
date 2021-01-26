@@ -6,7 +6,6 @@ import Basic from '../api/basic';
 
 const Footer = (props) => {
   const { isHome } = props;
-  console.log('isHome：', isHome);
   const [info, setInfo] = useState({
     visitors: 0,
     total: 0,
@@ -23,7 +22,7 @@ const Footer = (props) => {
     Router.events.on('routeChangeStart', startLoading);
     Router.events.on('routeChangeComplete', stopLoading);
     Basic.getInfo('Basic.Statistics')
-      .then((res) => setInfo(res));
+      .then((res) => setInfo(res.data));
     return () => {
       Router.events.off('routeChangeStart', stopLoading);
       Router.events.off('routeChangeComplete', stopLoading);
@@ -33,7 +32,7 @@ const Footer = (props) => {
     <>
       <Container>
         <Loading loading={loading} />
-        <p>©2018 - 2020 by <a href="https://jszoo.com">AlanGrady </a>
+        <p>©2018 - 2021 by <a href="https://jszoo.com">yemingrujing </a>
           { isHome === 'detail' && <span> 访客(总数/今日): {info.visitors} / {info.today}, 总访问量: {info.total}</span> }
         </p>
         <img src="/image-base-url/blog/common/1611624316636.gif" alt="copyright" />
