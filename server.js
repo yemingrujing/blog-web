@@ -32,11 +32,35 @@ app.prepare()
     // gzip
     server.use(compression());
     server.use(express.static('seo'));
+
     server.get('/detail/:id', (req, res) => {
       const actualPage = '/detail';
       const queryParams = { id: req.params.id };
       app.render(req, res, actualPage, queryParams);
     });
+
+    const robotsOptions = {
+      root: __dirname + '/seo/',
+      headers: {
+        'Content-Type': 'text/plain;charset=UTF-8',
+      }
+    };
+    server.get('/robots.txt', (req, res) => (
+      res.status(200)
+        .sendFile('robots.txt', robotsOptions)
+    ));
+
+    const sitemapOptions = {
+      root: __dirname + '/seo/',
+      headers: {
+        'Content-Type': 'text/xml;charset=UTF-8',
+      }
+    };
+    server.get('/sitemap.xml', (req, res) => (
+      res.status(200)
+        .sendFile('sitemap.xml', sitemapOptions)
+    ));
+
     server.all('*', (req, res) => {
       handle(req, res);
     });
