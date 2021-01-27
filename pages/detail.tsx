@@ -102,7 +102,7 @@ const Detail = (props) => {
           {recommend.length > 1 && <Recommend recommend={recommend} id={id} />}
           <Comment comments={comments} article={articleTitle} id={id} />
         </Container>
-        <Footer isHome="detail" />
+        <Footer style=" position: fixed;bottom: 0;" isHome="detail" />
       </DetailContent>
       {show && <ImagePreview modal={modal} closeModal={closeModal} />}
       <BackTop />

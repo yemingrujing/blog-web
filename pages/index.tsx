@@ -74,8 +74,8 @@ const Home = (props) => {
             />
           </Col>
         </Row>
-        <Footer isHome="home" />
       </Content>
+      <Footer isHome="home" />
     </>
   );
 };

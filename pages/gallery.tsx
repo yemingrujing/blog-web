@@ -5,8 +5,8 @@ import { Main } from '../static/style/gallery';
 import MyHead from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import basic from '../api/basic';
 import ImagePreview from '../components/ImagePreview';
+import Basic from '../api/basic';
 
 const info = {
   articleTitle: 'YeMingRuJing的个人相册',
@@ -61,5 +61,11 @@ const Gallery = (props) => {
     </>
   );
 };
-Gallery.getInitialProps = async () => basic.gallery();
+Gallery.getInitialProps = async (props) => {
+  const gallery = await Basic.gallery();
+  if (!gallery.data) {
+    props.res.redirect('/');
+  }
+  return gallery.data;
+};
 export default Gallery;

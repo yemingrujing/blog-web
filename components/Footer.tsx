@@ -5,7 +5,7 @@ import Loading from './loading';
 import Basic from '../api/basic';
 
 const Footer = (props) => {
-  const { isHome } = props;
+  const { isHome, position } = props;
   const [info, setInfo] = useState({
     visitors: 0,
     total: 0,
@@ -30,7 +30,7 @@ const Footer = (props) => {
   }, []);
   return (
     <>
-      <Container>
+      <Container position={position}>
         <Loading loading={loading} />
         <p>©2018 - 2021 by <a href="https://jszoo.com">yemingrujing </a>
           { isHome === 'detail' && <span> 访客(总数/今日): {info.visitors} / {info.today}, 总访问量: {info.total}</span> }
