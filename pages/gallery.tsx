@@ -56,7 +56,7 @@ const Gallery = (props) => {
         </Main>
       </Container>
       {show && <ImagePreview modal={modal} closeModal={closeModal} />}
-      <Footer />
+      <Footer position="fix" />
       <BackTop />
     </>
   );
