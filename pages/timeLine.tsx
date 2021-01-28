@@ -12,6 +12,28 @@ const TimeLine = (props) => {
     list,
     image,
   } = props;
+  let content;
+  if (list && list.length > 0) {
+    content = (
+      <Main>
+        <Timeline mode="alternate" reverse>
+          {
+            list.map((k, i) => (
+              <Timeline.Item label={k.createTime} key={i.toString()}>
+                <Link href={{
+                  pathname: '/detail',
+                  query: { id: k.id },
+                }}
+                >
+                  <a><img src={`/${k.cover}`} alt="" />{k.articleTitle}</a>
+                </Link>
+              </Timeline.Item>
+            ))
+          }
+        </Timeline>
+      </Main>
+    );
+  }
   return (
     <>
       <Head />
@@ -20,23 +42,7 @@ const TimeLine = (props) => {
         <div className="top">
           <p>流年不念终将安，时光不老你还在</p>
         </div>
-        <Main>
-          <Timeline mode="alternate" reverse>
-            {
-              list.map((k, i) => (
-                <Timeline.Item label={k.createTime} key={i.toString()}>
-                  <Link href={{
-                    pathname: '/detail',
-                    query: { id: k.id },
-                  }}
-                  >
-                    <a><img src={`/${k.cover}`} alt="" />{k.articleTitle}</a>
-                  </Link>
-                </Timeline.Item>
-              ))
-            }
-          </Timeline>
-        </Main>
+        {content}
       </Container>
       <Footer position="fix" />
       <BackTop />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { BackTop } from 'antd';
+import { BackTop, Timeline } from 'antd';
+import Link from 'next/link';
 import { Container } from '../static/style/timeLine';
 import { Main } from '../static/style/gallery';
 import MyHead from '../components/Head';
@@ -31,6 +32,26 @@ const Gallery = (props) => {
     setShow(false);
     setModal({});
   };
+  let content;
+  if (list && list.length > 0) {
+    content = (
+      <Main>
+        {
+          gallery.map((k, i) => (
+            <div key={i.toString()}>
+              <h3>{k}</h3>
+              <div className="list">
+                {
+                  o[k].map((item, j) => (
+                    <div className="item" key={(j + i).toString()}><img src={item.url} alt="item.describe" onClick={() => openModal(item)} /></div>
+                  ))
+                }</div>
+            </div>
+          ))
+        }
+      </Main>
+    );
+  }
   return (
     <>
       <MyHead info={info} />
@@ -39,21 +60,7 @@ const Gallery = (props) => {
         <div className="top">
           <p>那些年我到过的地方</p>
         </div>
-        <Main>
-          {
-            gallery.map((k, i) => (
-              <div key={i.toString()}>
-                <h3>{k}</h3>
-                <div className="list">
-                  {
-                    o[k].map((item, j) => (
-                      <div className="item" key={(j + i).toString()}><img src={item.url} alt="item.describe" onClick={() => openModal(item)} /></div>
-                    ))
-                  }</div>
-              </div>
-            ))
-          }
-        </Main>
+        {content}
       </Container>
       {show && <ImagePreview modal={modal} closeModal={closeModal} />}
       <Footer position="fix" />
