@@ -59,9 +59,7 @@ const Header = () => {
       setSearchList([]);
       return;
     }
-    console.log('process.env.customkey：{}', process.env.customkey);
     const res = await Basic.blogSearch({ keywords: inputVal });
-    console.log('blogSearch：{}', res);
     setSearchList(res.data);
   };
   const goDetail = (id) => {
