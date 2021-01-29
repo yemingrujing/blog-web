@@ -11,8 +11,8 @@
   "private": true,
   "scripts": {
     "dev": "set NODE_ENV=development && node server.js",
-    "build": "next build",
-    "start": "next start"
+    "build": "set NODE_ENV=production && rmdir /s /q build && next build",
+    "start": "set NODE_ENV=development && rmdir /s /q build && next build && node server.js"
   },
   "dependencies": {
     "antd": "^4.10.3",
