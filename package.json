@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "dev": "set NODE_ENV=development && node server.js",
-    "build": "set NODE_ENV=production && rmdir /s /q build && next build",
+    "build": "set NODE_ENV=production && rm -rf build && next build",
     "start": "set NODE_ENV=development && rmdir /s /q build && next build && node server.js"
   },
   "dependencies": {
