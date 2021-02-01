@@ -58,6 +58,7 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': [2, { devDependencies: true }],
     'import/prefer-default-export': 0,
+    "import/no-unresolved": [2, { "ignore": ["@/redux/store"] }],
     'jsx-a11y/anchor-is-valid': 0,
     'jsx-a11y/control-has-associated-label': 0,
     'jsx-a11y/click-events-have-key-events': 0,

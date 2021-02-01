@@ -7,7 +7,6 @@ import versionInfo from '../package.json';
 class MyApp extends App {
   componentDidMount() {
     const { reduxStore } = this.props as any;
-    console.log(reduxStore);
     const info = [
       `Version: ${versionInfo.version}`,
       `Author: ${`${versionInfo.author.name} - ${versionInfo.author.email}`}`,

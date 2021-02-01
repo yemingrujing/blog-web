@@ -10,10 +10,6 @@ interface State {
     email: string;
     github: string;
     projectGithub: string;
-    admin: {
-      tokenKey: string;
-      userInfoKey: string;
-    };
   };
   error: {
     status: number;
@@ -27,13 +23,9 @@ const initialState: State = {
     siteDomain: '',
     icpGovCn: 'http://www.beian.miit.gov.cn',
     siteLogo: '',
-    email: '',
-    github: 'https://github.com/bs32g1038',
-    projectGithub: 'https://github.com/bs32g1038/node-blog',
-    admin: {
-      tokenKey: 'node-blog-bs32g1038@163.com',
-      userInfoKey: 'node-blog-bs32g1038@163.com-userInfo',
-    },
+    email: 'yemingrujing@gmail.com',
+    github: 'https://github.com/yemingrujing',
+    projectGithub: 'https://github.com/yemingrujing/blog-web',
   },
   error: null,
 };
@@ -63,6 +55,9 @@ const app = createSlice({
   },
 });
 
-export const { setError, setConfig } = app.actions;
+export const {
+  setError,
+  setConfig,
+} = app.actions;
 
 export default app.reducer;

@@ -29,6 +29,7 @@ module.exports = {
   },
   // 手动修改webpack配置
   webpack(config, options) {
+    config.resolve.alias["@"] = path.resolve(__dirname);
     return config;
   },
   // 手动修改webpackDevMiddleware配置
