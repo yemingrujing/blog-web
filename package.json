@@ -12,7 +12,9 @@
   "scripts": {
     "dev": "set NODE_ENV=development && node server.js",
     "build": "set NODE_ENV=production && rm -rf build && next build",
-    "start": "set NODE_ENV=development && rmdir /s /q build && next build && node server.js"
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
+    "reload": "pm2 reload ecosystem.config.js"
   },
   "dependencies": {
     "antd": "^4.10.3",

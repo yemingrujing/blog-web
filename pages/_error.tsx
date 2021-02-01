@@ -14,6 +14,11 @@ const Error = () => {
             .then(() => {
               console.log(`ERROR：${t}`);
             });
+        } else if (t <= 0) {
+        	Router.push('/404')
+        	  .then(() => {
+              console.log(`ERROR：${t}`);
+            });
         }
         return t -= 1;
       });
