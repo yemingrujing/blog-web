@@ -1,6 +1,9 @@
 import App from 'next/app';
 import 'antd/dist/antd.css';
 import 'highlight.js/styles/atelier-dune-dark.css';
+import { Provider } from 'react-redux';
+import { ColorModeProvider } from '@chakra-ui/core';
+import ErrorPage from '@/components/error-page';
 import withReduxStore from '../redux/with-redux-store';
 import versionInfo from '../package.json';
 
@@ -18,6 +21,25 @@ class MyApp extends App {
     for (const message of info) {
       console.log(message);
     }
+  }
+
+  public render() {
+    const {
+      Component,
+      pageProps,
+      reduxStore,
+    } = this.props as any;
+    return (
+      <Provider store={reduxStore}>
+        <ColorModeProvider>
+          {reduxStore.getState().app.error ? (
+            <ErrorPage statusCode={reduxStore.getState().app.error.status} />
+          ) : (
+            <Component {...pageProps} />
+          )}
+        </ColorModeProvider>
+      </Provider>
+    );
   }
 }
 
