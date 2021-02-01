@@ -55,7 +55,7 @@ const Error = (props: Props) => {
         <Divider width="100%" />
       </Box>
       <Box fontSize={rem(14)} color="rgba(0, 0, 0, 0.45)">
-        <span>Copyright © 2016-{new Date().getFullYear()}</span>
+        <span>Copyright © 2020-{new Date().getFullYear()}</span>
         <Link color="rgba(0, 0, 0, 0.45)" href="/" fontSize={rem(14)} ml={1}>
           {appConfig.siteTitle}
         </Link>
