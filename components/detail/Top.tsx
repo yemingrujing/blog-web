@@ -2,7 +2,7 @@ import React from 'react';
 import {
   InboxOutlined, ScheduleOutlined, SyncOutlined, ProfileOutlined, ClockCircleOutlined, RiseOutlined,
 } from '@ant-design/icons';
-import { TopBox } from '../../static/style/detail';
+import { TopBox } from '../../public/style/detail';
 
 const Top = (props) => {
   const { info } = props;

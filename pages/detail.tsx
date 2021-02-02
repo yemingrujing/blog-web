@@ -8,7 +8,7 @@ import MyHead from '../components/Head';
 import Header from '../components/Header';
 import Comment from '../components/detail/Comment';
 import Top from '../components/detail/Top';
-import { DetailContent, Aside, Container } from '../static/style/detail';
+import { DetailContent, Aside, Container } from '../public/style/detail';
 import config from '../config/markdown.config';
 import { CopyCode } from '../utils';
 import Footer from '../components/Footer';

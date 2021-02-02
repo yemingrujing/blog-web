@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Row, Col, Pagination, BackTop,
 } from 'antd';
-import { Content } from '../static/style/home';
+import { Content } from '../public/style/home';
 import ArticleList from '../components/home/ArticleList';
 import FullPage from '../components/home/FullPage';
 import Header from '../components/Header';

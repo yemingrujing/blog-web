@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { DoubleLeftOutlined } from '@ant-design/icons';
-import { Content } from '../../static/style/fullPage';
+import { Content } from '../../public/style/fullPage';
 
 const FullPage = (props) => {
   const { fullPage, poem } = props;

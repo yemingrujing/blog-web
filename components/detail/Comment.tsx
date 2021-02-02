@@ -3,7 +3,7 @@ import {
   Row, Col, Avatar, Button,
 } from 'antd';
 import { CommentOutlined, GlobalOutlined, LaptopOutlined } from '@ant-design/icons';
-import { Container } from '../../static/style/comment';
+import { Container } from '../../public/style/comment';
 import CommentForm from './CommentForm';
 
 const Comment = (props) => {

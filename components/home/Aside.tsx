@@ -13,7 +13,7 @@ import {
   SoundOutlined,
 } from '@ant-design/icons';
 import Link from 'next/link';
-import { Container, Item } from '../../static/style/aside';
+import { Container, Item } from '../../public/style/aside';
 import Notice from './notice';
 import { AddFavorite } from '../../utils';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { InboxOutlined, ScheduleOutlined } from '@ant-design/icons/lib/icons';
 import Link from 'next/link';
-import { Container } from '../../static/style/article';
+import { Container } from '../../public/style/article';
 
 const ArticleList = (props) => {
   const { list } = props;

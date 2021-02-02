@@ -14,7 +14,7 @@ import {
   MenuFoldOutlined,
   FileZipOutlined,
 } from '@ant-design/icons';
-import { HeaderBox } from '../static/style/header';
+import { HeaderBox } from '../public/style/header';
 import { throttle } from '../utils';
 import Basic from '../api/basic';
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
-import { Container } from '../static/style/footer';
+import { Container } from '../public/style/footer';
 import Loading from './loading';
 import Basic from '../api/basic';
 

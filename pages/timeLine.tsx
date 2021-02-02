@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Head from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Container, Main } from '../static/style/timeLine';
+import { Container, Main } from '../public/style/timeLine';
 import Basic from '../api/basic';
 
 const TimeLine = (props) => {

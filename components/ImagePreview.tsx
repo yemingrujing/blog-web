@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CloseOutlined, MessageOutlined, PushpinFilled } from '@ant-design/icons';
-import { Container } from '../static/style/imagePreview';
+import { Container } from '../public/style/imagePreview';
 
 const ImagePreview = (props) => {
   const { modal } = props;

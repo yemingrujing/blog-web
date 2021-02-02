@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BackTop, Timeline } from 'antd';
 import Link from 'next/link';
-import { Container } from '../static/style/timeLine';
-import { Main } from '../static/style/gallery';
+import { Container } from '../public/style/timeLine';
+import { Main } from '../public/style/gallery';
 import MyHead from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import '../static/js/canvas';
+import '../public/js/canvas';
 
 const MyHead = (props) => {
   const { info } = props;
@@ -26,8 +26,8 @@ const MyHead = (props) => {
       <link rel="shortcut icon" type="image/x-icon" href="/image-base-url/blog/common/favicon.ico" />
       <meta name="sogou_site_verification" content="RSa1MBtgZI" />
       <title key="viewport">{head.articleTitle}</title>
-      <script src="/static/js/yinghua.js" />
-      <script src="/static/js/kindness.js" />
+      <script src="/static/yinghua.js" />
+      <script src="/static/kindness.js" />
     </Head>
   );
 };

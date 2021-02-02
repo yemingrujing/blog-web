@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'antd';
 import { LikeFilled } from '@ant-design/icons';
 import Router from 'next/router';
-import { Container } from '../../static/style/recomend';
+import { Container } from '../../public/style/recomend';
 
 const { Meta } = Card;
 
