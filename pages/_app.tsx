@@ -1,4 +1,4 @@
-import App from 'next/app';
+import App, { AppInitialProps, AppContext } from 'next/app';
 import 'antd/dist/antd.css';
 import 'highlight.js/styles/atelier-dune-dark.css';
 import { Provider } from 'react-redux';
@@ -7,7 +7,19 @@ import ErrorPage from '@/components/error-page';
 import withReduxStore from '../redux/with-redux-store';
 import versionInfo from '../package.json';
 
-class MyApp extends App {
+class MyApp extends App<AppInitialProps> {
+  public static getInitialProps = async ({
+    Component,
+    ctx,
+  }: AppContext) => ({
+    pageProps: {
+      // Call page-level getInitialProps
+      ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
+      // Some custom thing for all pages
+      pathname: ctx.pathname,
+    },
+  });
+
   componentDidMount() {
     const { reduxStore } = this.props as any;
     const info = [
