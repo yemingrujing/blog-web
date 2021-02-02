@@ -1,9 +1,8 @@
 const path = require('path');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-});
+const withTypescript = require('@zeit/next-typescript')
+const withSass = require('@zeit/next-sass')
 
-module.exports = withBundleAnalyzer({
+module.exports = withTypescript(withSass({
   // 输出目录
   distDir: 'build',
   // 本地开发时对页面内容的缓存
@@ -16,8 +15,8 @@ module.exports = withBundleAnalyzer({
   // 在pages目录下会被当做页面解析的后缀
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   // 手动修改webpack配置
-  webpack(config) {
+  webpack(config, { buildId, dev, isServer, defaultLoaders }) {
     config.resolve.alias['@'] = path.resolve(__dirname);
     return config;
   },
-});
+}));
