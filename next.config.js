@@ -1,8 +1,7 @@
 const path = require('path');
-const withTypescript = require('@zeit/next-typescript')
 const withCss = require('@zeit/next-css')
 
-module.exports = withTypescript(withCss({
+module.exports = withCss({
   // 输出目录
   distDir: 'build',
   // 本地开发时对页面内容的缓存
@@ -19,4 +18,4 @@ module.exports = withTypescript(withCss({
     config.resolve.alias['@'] = path.resolve(__dirname);
     return config;
   },
-}));
+});
