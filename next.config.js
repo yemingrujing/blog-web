@@ -1,8 +1,8 @@
 const path = require('path');
 const withTypescript = require('@zeit/next-typescript')
-const withSass = require('@zeit/next-sass')
+const withCss = require('@zeit/next-css')
 
-module.exports = withTypescript(withSass({
+module.exports = withTypescript(withCss({
   // 输出目录
   distDir: 'build',
   // 本地开发时对页面内容的缓存
