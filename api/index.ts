@@ -2,7 +2,7 @@ import HttpClients from '../utils/HttpClients';
 import getUrl, { MethodEnum } from '../config';
 
 class Abstract {
-    protected baseUrl = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:7001/web/' : '/web/';
+    protected baseUrl = typeof self === 'object' ? '/web/' : 'http://127.0.0.1:7001/web/';
 
     private fetch(method, url, param: any) {
       const _url = (url as string).split('.');

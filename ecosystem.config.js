@@ -5,7 +5,7 @@ module.exports = {
     instances: 1,
     max_restarts: 7,
     env: {
-      NODE_ENV: 'development', // production
+      NODE_ENV: 'production', // production
     },
     watch:[
         "server",
