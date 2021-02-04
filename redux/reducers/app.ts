@@ -19,7 +19,7 @@ interface State {
 const initialState: State = {
   config: {
     siteTitle: '',
-    siteIcp: '粤ICP备16021965号-3',
+    siteIcp: '皖ICP备2021001637号',
     siteDomain: '',
     icpGovCn: 'http://www.beian.miit.gov.cn',
     siteLogo: '',
