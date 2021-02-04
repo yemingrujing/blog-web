@@ -37,7 +37,7 @@ const Footer = (props) => {
     <>
       <Container position={position}>
         <Loading loading={loading} />
-        <p>©2020 - 2021 by <a href="https://jszoo.com">yemingrujing </a>
+        <p>©2020 - 2021 by <a href="https://ymrj.tech">yemingrujing </a>
           <Link fontSize={rem(14)} ml={1} color="rgba(0, 0, 0, 0.45)" href={appConfig.icpGovCn} isExternal>
             <span className="icon-icp" /> {appConfig.siteIcp}
           </Link>
