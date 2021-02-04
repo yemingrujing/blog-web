@@ -21,7 +21,7 @@ const initialState: State = {
     siteTitle: '',
     siteIcp: '皖ICP备2021001637号',
     siteDomain: '',
-    icpGovCn: 'http://www.beian.miit.gov.cn',
+    icpGovCn: 'http://beian.miit.gov.cn',
     siteLogo: '',
     email: 'yemingrujing@gmail.com',
     github: 'https://github.com/yemingrujing',
