@@ -33,7 +33,7 @@ const About = () => (
             生成文章目录使用 markdown-navbar ，语法高亮 highlight.js
           </Descriptions.Item>
           <Descriptions.Item label="前台源码">
-            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=SpectreAlan&repo=blog-nextjs&theme=react)](https://github.com/SpectreAlan/blog-nextjs)') }} />
+            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog-nextjs&theme=great-gatsby)](https://github.com/yemingrujing/blog-web)') }} />
           </Descriptions.Item>
           <Descriptions.Item label="后台管理">
             VUE全家桶、axios、echarts<br />
@@ -42,7 +42,7 @@ const About = () => (
             新建/编辑文章使用 tui-editor
           </Descriptions.Item>
           <Descriptions.Item label="后台源码">
-            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=SpectreAlan&repo=blog_admin&theme=blueberry)](https://github.com/SpectreAlan/blog_admin)') }} />
+            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog_admin&theme=algolia)](https://github.com/yemingrujing/blog-admin)') }} />
           </Descriptions.Item>
           <Descriptions.Item label="中台数据接口">
             基础架构使用阿里的Egg.js<br />
@@ -51,7 +51,7 @@ const About = () => (
             数据库使用mysql
           </Descriptions.Item>
           <Descriptions.Item label="中台源码">
-            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=SpectreAlan&repo=blog-server&theme=chartreuse-dark)](https://github.com/SpectreAlan/blog-server)') }} />
+            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog-server&theme=cobalt)](https://github.com/yemingrujing/blog-server)') }} />
           </Descriptions.Item>
         </Descriptions>
         <Descriptions title="关于我自己" layout="vertical" column={2}>
@@ -60,8 +60,8 @@ const About = () => (
           <Descriptions.Item label="Hometown">上海 - 嘉定 </Descriptions.Item>
           <Descriptions.Item label="Live">Philippines</Descriptions.Item>
           <Descriptions.Item label="Other Contacts" span={2}>
-            <a href="https://github.com/SpectreAlan/blog" target="_blank" title="SpectreAlan"><GithubOutlined /></a>
-            <a href="https://twitter.com/SpectreAlan" target="_blank" title="SpectreAlan"><TwitterOutlined /></a>
+            <a href="https://github.com/yemingrujing" target="_blank" title="yemingrujing"><GithubOutlined /></a>
+            <a href="https://twitter.com/yemingrujing" target="_blank" title="yemingrujing"><TwitterOutlined /></a>
           </Descriptions.Item>
           <Descriptions.Item label="Summary" span={2}>
             近些年一直从事web前端开发工作，熟悉前端主要技术栈，平时喜欢研究web前端、服务器方面的各种技术
@@ -72,7 +72,7 @@ const About = () => (
             移动端：Flutter、RN
           </Descriptions.Item>
           <Descriptions.Item label="Skills - 后端" span={2}>
-            主要技术栈：PHP、Node、Mysql<br />
+            主要技术栈：JAVA、Node、Mysql<br />
             框架：Koa2、Egg.js
           </Descriptions.Item>
         </Descriptions>,
