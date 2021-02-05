@@ -33,7 +33,7 @@ const About = () => (
             生成文章目录使用 markdown-navbar ，语法高亮 highlight.js
           </Descriptions.Item>
           <Descriptions.Item label="前台源码">
-            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog-nextjs&theme=great-gatsby)](https://github.com/yemingrujing/blog-web)') }} />
+            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog-web&theme=great-gatsby)](https://github.com/yemingrujing/blog-web)') }} />
           </Descriptions.Item>
           <Descriptions.Item label="后台管理">
             VUE全家桶、axios、echarts<br />
@@ -42,7 +42,7 @@ const About = () => (
             新建/编辑文章使用 tui-editor
           </Descriptions.Item>
           <Descriptions.Item label="后台源码">
-            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog_admin&theme=algolia)](https://github.com/yemingrujing/blog-admin)') }} />
+            <div id="detail-content" dangerouslySetInnerHTML={{ __html: marked('[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=yemingrujing&repo=blog-admin&theme=algolia)](https://github.com/yemingrujing/blog-admin)') }} />
           </Descriptions.Item>
           <Descriptions.Item label="中台数据接口">
             基础架构使用阿里的Egg.js<br />
@@ -57,8 +57,8 @@ const About = () => (
         <Descriptions title="关于我自己" layout="vertical" column={2}>
           <Descriptions.Item label="Name">YeMingRuJing</Descriptions.Item>
           <Descriptions.Item label="email">yemingrujing@gmail.com</Descriptions.Item>
-          <Descriptions.Item label="Hometown">上海 - 嘉定 </Descriptions.Item>
-          <Descriptions.Item label="Live">Philippines</Descriptions.Item>
+          <Descriptions.Item label="Hometown">ShangHai - JiaDing </Descriptions.Item>
+          <Descriptions.Item label="Live">China</Descriptions.Item>
           <Descriptions.Item label="Other Contacts" span={2}>
             <a href="https://github.com/yemingrujing" target="_blank" title="yemingrujing"><GithubOutlined /></a>
             <a href="https://twitter.com/yemingrujing" target="_blank" title="yemingrujing"><TwitterOutlined /></a>
